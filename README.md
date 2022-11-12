@@ -1,4 +1,4 @@
-# LEVM - Little Ethereum Virtual Machine
+# levm - Little Ethereum Virtual Machine
 
 Run smart contracts on the Ethereum Virtual Machine (EVM) without the Ethereum blockchain. 
 
@@ -31,7 +31,7 @@ func main() {
 	abiObject, binData, err := tools.LoadContract("contract/example_sol_Example.abi", "contract/example_sol_Example.bin")
 	fmt.Println("Abi\n", abiObject.Methods)
 
-	// create new LEVM instance
+	// create new levm instance
 	lvm := levm.New("./db", big.NewInt(0), fromAddr)
 
 	// create a new account and set the balance

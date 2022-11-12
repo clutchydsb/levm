@@ -1,14 +1,12 @@
 package vminterface
 
 import (
+	"Nezha/ethereum/go-ethereum/common"
+	"Nezha/ethereum/go-ethereum/consensus"
+	"Nezha/ethereum/go-ethereum/core/types"
 	"crypto/sha256"
 	"math/big"
 	"time"
-
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-
-	"github.com/ethereum/go-ethereum/core/types"
 )
 
 // ChainContext needed by the evm
@@ -28,9 +26,9 @@ func (cc ChainContext) GetHeader(hash common.Hash, number uint64) *types.Header 
 	return &types.Header{
 		Coinbase:   cc.coinbase,
 		Difficulty: big.NewInt(1),
-		Number:     big.NewInt(1),
-		GasLimit:   1000000,
-		GasUsed:    0,
+		Number:     big.NewInt(0),
+		GasLimit:   uint64(1000000),
+		GasUsed:    uint64(0),
 		Time:       uint64(time.Now().Unix()),
 		Extra:      nil,
 	}

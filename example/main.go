@@ -1,12 +1,10 @@
 package main
 
 import (
+	"Nezha/evm/levm"
+	"Nezha/evm/levm/tools"
 	"fmt"
 	"math/big"
-
-	"github.com/cryptokass/levm"
-
-	"github.com/cryptokass/levm/tools"
 )
 
 var (
@@ -22,7 +20,7 @@ func main() {
 	abiObject, binData, err := tools.LoadContract("contract/example_sol_Example.abi", "contract/example_sol_Example.bin")
 	fmt.Println("Abi\n", abiObject.Methods)
 
-	// create new LEVM instance
+	// create new levm instance
 	lvm := levm.New("./db", big.NewInt(0), fromAddr)
 
 	// create a new account and set the balance
@@ -35,5 +33,4 @@ func main() {
 	fmt.Printf("contract address: %x\n", addr)
 	fmt.Println("unused gas:", gas)
 	fmt.Println("errors:", err)
-
 }

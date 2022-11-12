@@ -1,14 +1,12 @@
 package vminterface
 
 import (
+	"Nezha/ethereum/go-ethereum/common"
+	"Nezha/ethereum/go-ethereum/core"
+	"Nezha/ethereum/go-ethereum/core/vm"
 	"crypto/sha256"
 	"math/big"
 	"time"
-
-	"github.com/ethereum/go-ethereum/core"
-
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/vm"
 )
 
 // NewVMContext will construct a new EVM Context with default values.

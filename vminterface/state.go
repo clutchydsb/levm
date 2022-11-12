@@ -1,11 +1,11 @@
 package vminterface
 
 import (
-	com "github.com/cryptokass/levm/common"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/ethdb"
+	"Nezha/ethereum/go-ethereum/common"
+	"Nezha/ethereum/go-ethereum/core/rawdb"
+	"Nezha/ethereum/go-ethereum/core/state"
+	"Nezha/ethereum/go-ethereum/ethdb"
+	com "Nezha/evm/levm/common"
 )
 
 // NewStateDB - Create a new StateDB using levelDB instead of RAM
@@ -26,5 +26,4 @@ func NewStateDB(root common.Hash, dbPath string) (*state.StateDB, ethdb.Database
 	com.PanicErr(err)
 
 	return stateDB, edb
-
 }

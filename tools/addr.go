@@ -1,12 +1,14 @@
 package tools
 
 import (
-	"github.com/CryptoKass/splashgo/splashkeys"
-	"github.com/ethereum/go-ethereum/common"
+	"Nezha/ethereum/go-ethereum/common"
+	"Nezha/evm/splashecdsa"
+	"crypto/elliptic"
 )
 
 func NewRandomAddress() common.Address {
-	priv, _ := splashkeys.GenerateSplashKeys()
-	addrBytes := priv.GetAddress()
+	curve := elliptic.P256()
+	priv, _ := splashecdsa.GenerateKeys(curve)
+	addrBytes := priv.GetAddress(true)
 	return common.BytesToAddress(addrBytes)
 }

@@ -1,10 +1,10 @@
 package tools
 
 import (
-	com "github.com/cryptokass/levm/common"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/trie"
+	"Nezha/ethereum/go-ethereum/common"
+	"Nezha/ethereum/go-ethereum/ethdb"
+	"Nezha/ethereum/go-ethereum/trie"
+	com "Nezha/evm/levm/common"
 )
 
 func StartTrieDB(edb ethdb.Database) *trie.Trie {
